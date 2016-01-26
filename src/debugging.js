@@ -10,12 +10,12 @@ window.spacebookAPI = {};
 spacebookAPI.createNewUser = function(name, email, password){
   
   var user = {
-    name: 'name' 
-    email: email,
-    password: password,
+    name: 'name', 
+    email: 'email',
+    password: 'password'
   };
-
-  return
+ 
+  return newUser;
 };
 
 
@@ -52,7 +52,7 @@ spacebookAPI.addAFriend = function(user, userFriend){
       // if the user already has friends, loop through the friends array
       for (var i = 2; i < user.friends.length; i+=2){
         // check to see whether the friend already exists
-        if (user.friends[] === userFriend) {
+        if (user.friends[i] === userFriend) {
           state = true;
           // if the user return 'user already exists'
           return 'user already exi';
@@ -75,10 +75,10 @@ spacebookAPI.createNewEvent = function(creator, name, location, date, startTime,
   var yourEvent = {
     creator: creator,
     name: name,
-    location: location
+    location: location,
     date: date,
     startTime: startTime,
-    endTime: endTime,
+    endTime: endTime
   };
 
   // add the event to the creator object so that they know they have an event they created
