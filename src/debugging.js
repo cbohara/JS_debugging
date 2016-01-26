@@ -10,13 +10,13 @@ window.spacebookAPI = {};
 spacebookAPI.createNewUser = function(name, email, password){
   
   var user = {
-    name: 'name', 
-    email: 'email',
-    password: 'password'
+    name: name, 
+    email: email,
+    password: password
   };
- 
-  return newUser;
-};
+  return user;
+}
+
 
 
 spacebookAPI.addLocation = function(user, location){
@@ -28,10 +28,10 @@ spacebookAPI.addLocation = function(user, location){
 
 spacebookAPI.searchForUser = function(userArray, name){
   // loop through the userArray
-  for (var i = 0; i < userArray; i++) {
+  for (var i = 0; i < userArray.length; i++) {
     // if the object in the userArray has the same name as our input name, return that user object.
-    if (userArray[0].name === 'name') {
-      return userArray[0];
+    if (userArray[i].name === name) {
+      return userArray[i];
     }
   }
  // if the object isn't inthe userArray, return this
@@ -43,31 +43,33 @@ spacebookAPI.searchForUser = function(userArray, name){
 spacebookAPI.addAFriend = function(user, userFriend){
   var state = false;
   // first let's check to see whether a place to hold our friends is defined or not
-  if (user[friends] === 'undefined'){
-    // if the user has no friends add a friends array to the users object
-      user.friend = [];
+
+  if (user['friends'] === undefined){
+    // if the user has no friends add a friends array to the users objec
+      user.friends = [];
       // push the name of said friend to the users friends array
-      user.friends.push(userFriend);
+      user.friends.push(userFriend.name);
+
   } else {
       // if the user already has friends, loop through the friends array
-      for (var i = 2; i < user.friends.length; i+=2){
+      for (var i = 0; i < user.friends.length; i++){
         // check to see whether the friend already exists
-        if (user.friends[i] === userFriend) {
+        if (user.friends[i] === userFriend.name) {
           state = true;
           // if the user return 'user already exists'
-          return 'user already exi';
+          return 'user already exists';
         }
       }
 
       if (state === false) {
         // if the user doesn't exist, push the name of the friend to your user.friends array
-        user.push(userFrie.name);
+        user.friends.push(userFriend.name);
       }
   }
-
   return user;
-
 };
+
+
 
 // createNewEvent should create a new event with 5 properties.
 spacebookAPI.createNewEvent = function(creator, name, location, date, startTime, endTime) {
