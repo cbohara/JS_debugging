@@ -10,7 +10,7 @@ window.spacebookAPI = {};
 spacebookAPI.createNewUser = function(name, email, password){
   
   var user = {
-    name: 'name' // ALBREY: take out this comma
+    name: 'name' 
     email: email,
     password: password,
   };
