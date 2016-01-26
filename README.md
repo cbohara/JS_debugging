@@ -11,18 +11,13 @@ The file `src/objects.js` contains function definitions and explanations for the
 
 
 #### Tests:
-- [ ] MysticalAnimal
-- [ ] AddFirstProperty
-- [ ] AddSecondProperty
-- [ ] AddThirdProperty
-- [ ] AddFourthProperty
-- [ ] AddFifthProperty
-- [ ] AccessFirstProperty
-- [ ] AccessSecondProperty
-- [ ] AccessThirdProperty
-- [ ] AccessFourthProperty
-- [ ] AccessFifthProperty
-- [ ] AddSixProperty
-- [ ] VariablePracticeOne
-- [ ] VariablePracticeTwo
-- [ ] LiteralObject
+- [ ] createNewUser
+- [ ] addLocation
+- [ ] searchForUser
+- [ ] addAFriend
+- [ ] createNewEvent
+- [ ] addEventAttendee
+####NightmareMode:
+- [ ] createNewUserFromBrowser
+- [ ] locationBasedSearch
+- [ ] addMultipleAttendees
