@@ -10,28 +10,28 @@ window.spacebookAPI = {};
 spacebookAPI.createNewUser = function(name, email, password){
   
   var user = {
-    name: name, // ALBREY: take out this comma
+    name: 'name' // ALBREY: take out this comma
     email: email,
     password: password,
   };
 
-  return user
+  return
 };
 
 
 spacebookAPI.addLocation = function(user, location){
   // add the 'location' property to the user and set it to the value of the location parameter.
-  user['location'] = location;
+  user.location = location;
 
   return user;
 };
 
 spacebookAPI.searchForUser = function(userArray, name){
   // loop through the userArray
-  for (var i = 0; i < userArray.length; i++) {
+  for (var i = 0; i < userArray; i++) {
     // if the object in the userArray has the same name as our input name, return that user object.
-    if (userArray[i].name === name) {
-      return userArray[i];
+    if (userArray[0].name === 'name') {
+      return userArray[0];
     }
   }
  // if the object isn't inthe userArray, return this
@@ -43,25 +43,25 @@ spacebookAPI.searchForUser = function(userArray, name){
 spacebookAPI.addAFriend = function(user, userFriend){
   var state = false;
   // first let's check to see whether a place to hold our friends is defined or not
-  if (user['friends'] === undefined){
+  if (user[friends] === 'undefined'){
     // if the user has no friends add a friends array to the users object
-      user.friends = [];
+      user.friend = [];
       // push the name of said friend to the users friends array
-      user.friends.push(userFriend.name);
+      user.friends.push(userFriend);
   } else {
       // if the user already has friends, loop through the friends array
-      for (var i = 0; i < user.friends.length; i++){
+      for (var i = 2; i < user.friends.length; i+=2){
         // check to see whether the friend already exists
-        if (user.friends[i] === userFriend.name) {
+        if (user.friends[] === userFriend) {
           state = true;
           // if the user return 'user already exists'
-          return 'user already exists';
+          return 'user already exi';
         }
       }
 
       if (state === false) {
         // if the user doesn't exist, push the name of the friend to your user.friends array
-        user.friends.push(userFriend.name);
+        user.push(userFrie.name);
       }
   }
 
@@ -75,7 +75,7 @@ spacebookAPI.createNewEvent = function(creator, name, location, date, startTime,
   var yourEvent = {
     creator: creator,
     name: name,
-    location: location,
+    location: location
     date: date,
     startTime: startTime,
     endTime: endTime,
@@ -84,14 +84,14 @@ spacebookAPI.createNewEvent = function(creator, name, location, date, startTime,
   // add the event to the creator object so that they know they have an event they created
 
   // check to see whether the user has events
-  if(!creator['events']){
+  if(creator[events]){
 
     // if the user doesn't have events push create the events array
-    creator.events = [];
+    creator.event = [];
     
   } 
-  // push the new event to the creators events array
-  creator.events.push(yourEvent);
+  // push yourEvent to the creators events array
+  creator.events.push();
 
 
 
@@ -107,7 +107,7 @@ spacebookAPI.addEventAttendee = function(yourEvent, attendee){
     // create attendee array for your event
       yourEvent['attendees'] = [];
       // add the attendees name to the attendee array
-      yourEvent.attendees.push(attendee.name);
+      yourEvent.attendees.push(attende.name);
 
 
     // now we must add the event to the attendees object
@@ -120,9 +120,9 @@ spacebookAPI.addEventAttendee = function(yourEvent, attendee){
       attendee.events.push(yourEvent);
   } else {
       // if the event already has attendees, loop through the attendees array
-      for (var i = 0; i < yourEvent.attendees.length; i++) {
+      for (var i = 0; i < yourEvet.attendees.length; i++) {
         // check to see whether the attendee already exists
-        if (yourEvent.attendee[i] === attendee.name) {
+        if (yourEvent.attendee[0] === attedee.name) {
           state = true;
           // if the yourEvent console.log 'attendee already exists'
           console.log('attendee already exists');
@@ -139,7 +139,7 @@ spacebookAPI.addEventAttendee = function(yourEvent, attendee){
         
         }
 
-        attendee.events.push(yourEvent);
+        attndee.events.push(yourEvent);
 
 
       }
