@@ -87,15 +87,11 @@ spacebookAPI.createNewEvent = function(creator, name, location, date, startTime,
 
   // check to see whether the user has events
   if(creator[events]){
-
     // if the user doesn't have events push create the events array
-    creator.event = [];
-    
+    creator.events = [];
   } 
   // push yourEvent to the creators events array
   creator.events.push();
-
-
 
   return yourEvent;
 };
@@ -105,11 +101,12 @@ spacebookAPI.createNewEvent = function(creator, name, location, date, startTime,
 spacebookAPI.addEventAttendee = function(yourEvent, attendee){
   var state = false;
   // check to see whether there are any attendees
-  if (!yourEvent['attendees']){
+  if (!yourEvent[attendees]){
     // create attendee array for your event
-      yourEvent['attendees'] = [];
+      yourEvent[attendees] = [];
+      console.log(attendees);
       // add the attendees name to the attendee array
-      yourEvent.attendees.push(attende.name);
+      yourEvent.attendees.push(attendee.name);
 
 
     // now we must add the event to the attendees object
